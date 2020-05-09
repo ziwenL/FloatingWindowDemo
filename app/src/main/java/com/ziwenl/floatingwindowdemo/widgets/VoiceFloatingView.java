@@ -228,7 +228,7 @@ public class VoiceFloatingView extends View {
     public void show() {
         if (!mIsShow) {
             if (mLayoutParams.x == 0 && mLayoutParams.y == 0 && mDirection == Direction.right) {
-                mLayoutParams.x = mWidthPixels - getMeasuredWidth();
+                mLayoutParams.x = mWidthPixels - mDefaultWidth;
                 mLayoutParams.y = 0;
             }
             if (mDirection == Direction.move) {
