@@ -29,8 +29,8 @@ public class FloatingWindowHelper {
     private WindowManager mWindowManager;
     private Map<View, WindowManager.LayoutParams> mChildViewMap;
 
-    public FloatingWindowHelper(Context mContext) {
-        mWindowManager = (WindowManager) mContext.getSystemService(WINDOW_SERVICE);
+    public FloatingWindowHelper(Context context) {
+        mWindowManager = (WindowManager) context.getSystemService(WINDOW_SERVICE);
     }
 
     /**
@@ -234,6 +234,7 @@ public class FloatingWindowHelper {
      * @param isApplyAuthorization 是否申请权限
      */
     public static boolean canDrawOverlays(Context context, boolean isApplyAuthorization) {
+        //Android 6.0 以下无需申请权限
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             //判断是否拥有悬浮窗权限，无则跳转悬浮窗权限授权页面
             if (Settings.canDrawOverlays(context)) {
